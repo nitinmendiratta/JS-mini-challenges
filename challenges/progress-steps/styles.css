@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  text-align: center;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  width: 350px;
+  max-width: 100%;
+}
+.progress-container::before {
+  content: "";
+  background-color: lightgrey;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+.progress {
+  background-color: skyblue;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: 0.4s ease;
+}
+.circle {
+  background-color: white;
+  border-radius: 50%;
+  color: grey;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  border: 3px solid lightgrey;
+  padding: 2px;
+  transition: 0.4s ease;
+}
+.circle.active {
+  border-color: skyblue;
+}
+.btn {
+  margin: 1rem;
+  background-color: skyblue;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 8px 30px;
+  font-size: 14px;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn:focus {
+  outline: 0;
+}
+.btn:disabled {
+  background-color: lightgrey;
+  cursor: not-allowed;
+}
