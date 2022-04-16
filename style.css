@@ -16,7 +16,6 @@ h1 a img{
 }
 
 main a {
-  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
