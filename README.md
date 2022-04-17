@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Frontend Mini Challenges</h1>
   <h3>Collection of frontend challenges for learning</h3>
-  <a href="https://sadanandpai.github.io/frontend-mini-challenges/"><img src="cover.png" alt="web programming" width="500px" /></a>
+  <a href="https://nitinmendiratta.github.io/JS-mini-challenges/"><img src="cover.png" alt="web programming" width="500px" /></a>
 </div>
 
 <div align="center">
