@@ -1,6 +1,6 @@
 const challenges = [
-	//MUST DO
-	// sadanandpai/frontend-mini-challenges
+  //Random Projects
+  // sadanandpai/frontend-mini-challenges
   { title: "Toast Popup", link: "#" },
   { title: "Toast Popup", link: "#" },
   { title: "Guess the number", link: "#" },
@@ -32,35 +32,58 @@ const challenges = [
   { title: "Emoji Editor", link: "#" },
   
   //Brad Traversy: 20+ Web Projects With Vanilla JavaScript
-
+  
   // ZTM: JavaScript Web Projects: 20 Projects to Build Your Portfolio
-
+  
   // Brad Traversy: 50 Projects In 50 Days - HTML, CSS & JavaScript
-  { title: "Expanding Cards", link: "expanding-cards"},
-  { title: "Progress Steps", link: "progress-steps"},
+  { 
+    title: "Expanding Cards", 
+    link: "expanding-cards", 
+    githublink: "expanding-cards", 
+    codesandboxlink:"https://codesandbox.io/s/1-expanding-cards-in-js-qisf2v?file=/index.js"
+  },
+  { 
+    title: "Progress Steps", 
+    link: "progress-steps", 
+    githublink: "progress-steps", 
+    codesandboxlink:"https://codesandbox.io/s/1-expanding-cards-in-js-qisf2v?file=/index.js"
+  }
   // JavaScript30
-
+  
 ];
-
+const path = "./challenges/";
+const githubUrl = "https://github.com/nitinmendiratta/JS-mini-challenges/tree/main/challenges/";
 const challengeGridEl = document.getElementById("challengeGrid");
 const comingsoonGridEl = document.getElementById("comingsoonGrid");
 
-const createAnchorElement = (obj) => {
-  const a = document.createElement("a");
-  
+const cardHTML = `
+<div class="card">
+<a href=""></a>
+<div class="externallinks">
+<a href=""><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" title="github" alt="github"></a>
+<a href=""><img src="./codesandboxicon.png" title="codesandbox" alt="codesandbox"></a>
+</div>
+</div>`;
 
+const createAnchorElement = (obj) => {
+  var temp = document.createElement('div');
+  temp.innerHTML = cardHTML;
+  var card = temp.firstElementChild;
+  const allLinks = card.getElementsByTagName('a');
+  const github = allLinks[1], codesandbox = allLinks[2];
+  
+  allLinks[0].textContent = obj.title;
+  allLinks[0].href = path+obj.link;
+  
   if(obj.link === '#'){
-    a.textContent = obj.title;
-    a.classList.add('disabled');
-    a.title = 'To be developed';
-    a.href = '#';
-	comingsoonGridEl.appendChild(a);
+    card.classList.add('disabled');
+    allLinks[0].title = 'To be developed';
+    comingsoonGridEl.appendChild(card);
   }else{
-	  a.textContent = obj.title;
-	  a.href = `./challenges/${obj.link}/`;
-	  challengeGridEl.appendChild(a);
+    github.href = githubUrl+obj.githublink;
+    codesandbox.href = obj.codesandboxlink;
+    challengeGridEl.appendChild(card);
   }
-  return a;
 };
 
 

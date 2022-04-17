@@ -3,22 +3,27 @@
   grid-gap: 1.5rem;
   margin: 2rem 0;
 }
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
 
 h1 {
   justify-content: center;
   align-items: center;
 }
 
-h1 a img{
-  height: 35px;
-  width:35px;
+img {
+  height: 25px;
+  width:25px;
   vertical-align: text-bottom;
 }
 
 main a {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(0, 0, 0, 0.05);
   padding: 10px;
@@ -32,6 +37,10 @@ main a {
 main a:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.disabled a {
+  color: grey;
 }
 
 @media screen and (min-width: 768px) {
@@ -51,4 +60,3 @@ main a:hover {
     grid-template-columns: repeat(5, 1fr);
   }
 }
-
